@@ -14,7 +14,7 @@ btnCreate.addEventListener('click', createBoxes);
 btnDestroy.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
-  amount = input.value;
+  let amount = input.value;
 
   const width = 30;
   const height = 30;
