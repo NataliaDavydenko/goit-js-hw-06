@@ -12,9 +12,7 @@ function onFormSubmit(event) {
 
   if (email === "" || password === "") {
     alert("Заповніть усі поля!");
-  }
-
-  
+  } else{
   const formData = {
     email,
     password,
@@ -22,5 +20,6 @@ function onFormSubmit(event) {
   
   console.log(formData);
 
-  form.reset();
+    form.reset();
+    }
 }

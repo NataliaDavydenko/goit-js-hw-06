@@ -12,15 +12,18 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
 const galleryList = document.querySelector(".gallery");
 
-for (const imageEl of images) {
-  galleryList.insertAdjacentHTML(
-    "afterbegin",
-    `<li><img src="${imageEl.url}", alt="${imageEl.alt}", width="300px", height="200px"></img></li>`
-  );
-}
+const gallery = image => {
 
-galleryList.style.display = "flex";
-galleryList.style.justifyContent = "space-around";
-galleryList.style.listStyle = "none";
+  return `<li><img src="${image.url}" alt="${image.alt}" width="300px" height="200px"></img></li>`
+
+};
+
+const liEl = images.map(gallery).join("");
+galleryList.insertAdjacentHTML("beforeend", liEl);
+
+  galleryList.style.display = "flex";
+  galleryList.style.justifyContent = "space-around";
+  galleryList.style.listStyle = "none";
